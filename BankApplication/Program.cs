@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,8 @@ namespace BankApplication
     {
         static void Main(string[] args)
         {
+            LoanType loanType = new LoanType();
+
             UserAccount.display();
             List<UserAccount> listuAc = new List<UserAccount>();
             UserAccount userAccount;
@@ -114,6 +117,47 @@ namespace BankApplication
                             }
                             UserAccount.display();
                         }
+                        break;
+
+
+                    case 5:
+                        loanType.show();
+                        int choose = 0;
+                        do
+                        {
+                            choose = Convert.ToInt32(Console.ReadLine().Trim());
+                            switch (choose)
+                            {
+                                case 1:
+                                    Console.WriteLine("Welecome to Car Loan");
+                                    
+                                    loanType.Loans("Car");
+                                    loanType.show();
+                                    break;
+
+                                case 2:
+                                    Console.WriteLine("Welecome to Haome Loan");
+
+                                    loanType.Loans("Home");
+                                    loanType.show();
+                                    break;
+
+                                case 3:
+                                    Console.WriteLine("Welecome to Personal Loan");
+                                    loanType.Loans("personal");
+                                    loanType.show();
+                                    break;
+
+                                default:
+                                    Console.WriteLine("Sorry you Chooses wrong ");
+                                    break;
+
+                            }
+                        } while (choose >= 3||choose<=3);
+                        
+                        
+                       
+                       
                         break;
                 }
             } while (choice < 5);

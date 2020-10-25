@@ -24,6 +24,7 @@ namespace BankApplication
             Console.WriteLine("2---check your balance");
             Console.WriteLine("3---Deposit Amount");
             Console.WriteLine("4---Withdrawal Amount");
+            Console.WriteLine("5---Take Loan ");
         }
 
     }
